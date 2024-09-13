@@ -1,3 +1,4 @@
+//Task 1
 const inventory = [
  { name: 'Wireless Earbuds', price: 100, quantity: 60, lowStockLevel: 15 },
  { name: 'Smartwatch', price: 255, quantity: 10, lowStockLevel: 2 },   
@@ -7,6 +8,7 @@ const inventory = [
   ];
   console.log(inventory);
 
+//Task 2
 const product = {
     name: "Smartwatch",
     price: 255,
@@ -22,3 +24,22 @@ let stockStatus = product.quantity >= product.lowStockLevel ? "In Stock" : "Low 
     console.log(`Stock Status: ${stockStatus}`);
 }
 console.log(displayProductDetails(product));
+
+//Task 3
+function updateStock(product,unitssold)
+{
+    let stockAfter = product.quantity - unitssold;
+     if (stockAfter === 0 || unitssold > product.quantity   )
+        return (`Product "${product.name}" is now Out of Stock.`);
+    else if (stockAfter <= product.lowStockLevel  ) 
+        return (`Product "${product.name}" is now Low Stock.`);
+    
+    }
+    console.log(updateStock(product,8));
+    
+        
+
+
+
+
+
