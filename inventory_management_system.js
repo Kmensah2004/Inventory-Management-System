@@ -15,7 +15,8 @@ const product = {
     quantity: 10,
     lowStockLevel: 2
 };
-function displayProductDetails(product) {
+function displayProductDetails() {
+const product = inventory.find(inventory => inventory.name === 'Smartwatch')
 let stockStatus = product.quantity >= product.lowStockLevel ? "In Stock" : "Low Stock";
     
     console.log(`Product Name: ${product.name}`);
@@ -23,7 +24,7 @@ let stockStatus = product.quantity >= product.lowStockLevel ? "In Stock" : "Low 
     console.log(`Quantity in Stock: ${product.quantity}`);
     console.log(`Stock Status: ${stockStatus}`);
 }
-console.log(displayProductDetails(product));
+console.log(displayProductDetails());
 
 //Task 3
 function updateStock(product,unitssold){
@@ -41,7 +42,9 @@ function checkLowStock()
     let newinventory = inventory.filter(product => product.quantity <= product.lowStockLevel);
     newinventory.forEach(object => console.log(object.name));
 }
-    checkLowStock();
+    console.log(checkLowStock());
+
+//Task 5 
     
         
 
