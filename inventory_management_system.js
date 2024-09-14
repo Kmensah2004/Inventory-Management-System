@@ -9,12 +9,6 @@ const inventory = [
   console.log(inventory);
 
 //Task 2
-const product = {
-    name: "Smartwatch",
-    price: 255,
-    quantity: 10,
-    lowStockLevel: 2
-};
 function displayProductDetails() {
 const product = inventory.find(inventory => inventory.name === 'Smartwatch')
 let stockStatus = product.quantity >= product.lowStockLevel ? "In Stock" : "Low Stock";
@@ -45,6 +39,13 @@ function checkLowStock()
     console.log(checkLowStock());
 
 //Task 5 
+function calculateInventoryValue()
+{
+ Productvalue = inventory.map(object => object.price * object.quantity);
+ InventoryTotalValue = Productvalue.reduce((total,Productvalue) => total + Productvalue,0);
+ return InventoryTotalValue;
+}
+console.log('Total Inventory Value:',calculateInventoryValue());
     
         
 
