@@ -29,7 +29,7 @@ function updateStock(product,unitssold){
         return (`Product "${product.name}" is now Low Stock.`);
     
     }
-    console.log(updateStock(product,8));
+    console.log(updateStock('Smartwatch',8));
 //Task 4
 function checkLowStock()
 {
