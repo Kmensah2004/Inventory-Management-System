@@ -10,7 +10,7 @@ const inventory = [
 
 //Task 2
 function displayProductDetails() {
-const product = inventory.find(inventory => inventory.name === 'Smartwatch') // found the Smartwatch name within the inventory
+const product = inventory.find(object => object.name === 'Smartwatch') // found the Smartwatch name within the inventory
 let stockStatus = product.quantity >= product.lowStockLevel ? "In Stock" : "Low Stock"; // if product quantity is more than the stock level it will print in stock
     
     console.log(`Product Name: ${product.name}`);
