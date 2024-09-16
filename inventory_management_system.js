@@ -10,7 +10,7 @@ const inventory = [
 
 //Task 2
 function displayProductDetails() {
-const product = inventory.find(object => object.name === 'Smartwatch') // found the Smartwatch name within the inventory
+const product = inventory.find(object => object.name === 'Smartwatch'); // found the Smartwatch name within the inventory
 let stockStatus = product.quantity >= product.lowStockLevel ? "In Stock" : "Low Stock"; // if product quantity is more than the stock level it will print in stock
     
     console.log(`Product Name: ${product.name}`);
@@ -22,21 +22,26 @@ console.log(displayProductDetails());
 
 //Task 3
 function updateStock(product,unitssold){
-    let stockAfter = product.quantity - unitssold; // takes product quanitity minus the function argument units sold
-     if (stockAfter === 0 || unitssold > product.quantity   ) // before subtraction if unitssold is more than the quantity print out of stock
+    let stockAfter = product.quantity - unitssold;// takes product quanitity minus the function argument units sold
+     if (stockAfter === 0 || unitssold > product.quantity) // before subtraction if unitssold is more than the quantity print out of stock
         return (`Product "${product.name}" is now Out of Stock.`);
     else if (stockAfter <= product.lowStockLevel  ) 
         return (`Product "${product.name}" is now Low Stock.`);
-    
+    else
+        return (`Product "${product.name}" went thru.`);
     }
-    console.log(updateStock('Smartwatch',8));
+    const product = inventory.find(object => object.name === 'Smartwatch');
+    console.log(updateStock(product,8));
 //Task 4
-function checkLowStock()
+function checkLowStock(inventory)
 {
-    let newinventory = inventory.filter(product => product.quantity <= product.lowStockLevel); // filters the inventory array to only show the ones with lowstocklevel if greater than quantity
-    newinventory.forEach(object => console.log(object.name));
+    inventory.forEach(object => {
+        if (object.quantity <= object.lowStockLevel)
+            return(`${object.name} is Low Stock`);
+        
+    });
 }
-    console.log(checkLowStock());
+    console.log(checkLowStock(inventory));
 
 //Task 5 
 function calculateInventoryValue()
